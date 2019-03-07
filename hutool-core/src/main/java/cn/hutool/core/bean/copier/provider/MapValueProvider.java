@@ -25,7 +25,7 @@ public class MapValueProvider implements ValueProvider<String> {
 	 * @param ignoreCase 是否忽略key的大小写
 	 */
 	public MapValueProvider(Map<?, ?> map, boolean ignoreCase) {
-		if(false == ignoreCase || map instanceof CaseInsensitiveMap) {
+		if(!ignoreCase || map instanceof CaseInsensitiveMap) {
 			//不忽略大小写或者提供的Map本身为CaseInsensitiveMap则无需转换
 			this.map = map;
 		}else {
